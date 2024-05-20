@@ -20,7 +20,6 @@ browser.storage.local.get().then(localStorage => {
         let instanceOption = document.createElement("option");
         instanceOption.innerText = instance.trim();
         instanceOption.value = "piped." + instance.replace("(Official)", "").trim();
-        console.log(instance.replace("(Official)").trim());
         instanceSelector.appendChild(instanceOption);
     });
 
@@ -50,6 +49,5 @@ instanceSelector.addEventListener("change", () => {
         action: "instanceChanged",
         value: instanceSelector.value
     });
-    //console.log(instanceSelector.value);
     browser.storage.local.set({instance: instanceSelector.value});
 });

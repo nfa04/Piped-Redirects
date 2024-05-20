@@ -20,7 +20,7 @@ fetch("https://raw.githubusercontent.com/wiki/TeamPiped/Piped-Frontend/Instances
     let lines = body.split("\n");
     lines.map(line => {
         let split = line.split("|");
-        if(split.length == 5) {
+        if(split.length == 5 && split[0].indexOf(" libre") == -1) {
             instances.push(split[0]);
         }
     });
